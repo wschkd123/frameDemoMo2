@@ -1,6 +1,7 @@
 package com.example.tome.framedemomo2;
 
-import com.example.tome.component_base.constants.BaseApplication;
+import com.example.tome.core.constants.BaseApplication;
+import com.fec.core.router.arouter.RouterConfig;
 import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 
 /**
@@ -12,8 +13,7 @@ import com.uuzuche.lib_zxing.activity.ZXingLibrary;
 public class MyApplication extends BaseApplication {
 
     private static MyApplication myApplication;
-
-
+//初始化
     public static MyApplication getInstance() {
         return myApplication;
     }
@@ -22,7 +22,8 @@ public class MyApplication extends BaseApplication {
     public void onCreate() {
         super.onCreate();
         myApplication = this ;
-
+        //arouter路由初始化
+        RouterConfig.init(this, BuildConfig.DEBUG);
         ZXingLibrary.initDisplayOpinion(this);
     }
 }

@@ -9,9 +9,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import butterknife.BindView;
-import com.example.tome.component_base.base.mvp.BaseVpListFragment;
-import com.example.tome.component_base.util.L;
-import com.example.tome.component_data.bean.EventBusBean;
+import com.example.tome.projectCore.base.mvp.BaseVpListFragment;
+import com.example.tome.core.util.L;
+import com.example.tome.projectCore.bean.EventBusBean;
 import com.example.tome.module_shop_mall.R;
 import com.example.tome.module_shop_mall.R2;
 import com.example.tome.module_shop_mall.contract.HomeContract;
@@ -71,7 +71,8 @@ public class HomeFragment extends BaseVpListFragment<HomeContract.View, HomeCont
 
     @Override
     protected void initTitle() {
-        mImmersionBar.fitsSystemWindows(true).statusBarColor(R.color.white).statusBarDarkFont(true, 0.1f).init();
+        L.d("状态栏"+"homeFragment");
+       // mImmersionBar.fitsSystemWindows(true).statusBarColor(R.color.white).statusBarDarkFont(true, 0.1f).init();
         mIvLeft.setVisibility(View.VISIBLE);
         mEtCommentSearch.setHint("请输入搜索内容");
         mEtCommentSearch.setEnabled(true);

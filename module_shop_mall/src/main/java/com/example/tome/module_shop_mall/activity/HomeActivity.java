@@ -14,11 +14,11 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import butterknife.BindView;
 import com.alibaba.android.arouter.facade.annotation.Route;
-import com.example.tome.component_base.base.mvc.BaseVcActivity;
-import com.example.tome.component_base.util.L;
-import com.example.tome.component_data.bean.EventBusBean;
-import com.example.tome.component_data.constant.BaseEventbusBean;
-import com.example.tome.component_data.d_arouter.RouterURLS;
+import com.example.tome.core.base.mvc.BaseVcActivity;
+import com.example.tome.core.util.L;
+import com.example.tome.projectCore.bean.EventBusBean;
+import com.example.tome.core.base.BaseEventbusBean;
+import com.fec.core.router.arouter.RouterURLS;
 import com.example.tome.module_shop_mall.R;
 import com.example.tome.module_shop_mall.R2;
 import com.example.tome.module_shop_mall.arouter.RouterCenter;
@@ -66,6 +66,7 @@ public class HomeActivity extends BaseVcActivity implements NavigationView.OnNav
 
     @Override
     protected void initTitle() {
+      //  mImmersionBar.fitsSystemWindows(true).statusBarColor(R.color.colorPrimary).init();
        // mImmersionBar.statusBarView(R.id.view_bar).init();
         //取代原本的ActionBar
        // setSupportActionBar(mToolbar);
@@ -143,9 +144,6 @@ public class HomeActivity extends BaseVcActivity implements NavigationView.OnNav
         mNavView.setNavigationItemSelectedListener(this);
         //头部设置监听
         mMUsTv.setOnClickListener(this);
-
-
-
 
     }
 
@@ -262,5 +260,10 @@ public class HomeActivity extends BaseVcActivity implements NavigationView.OnNav
         }
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        closeDrawer();
+    }
 }
 
